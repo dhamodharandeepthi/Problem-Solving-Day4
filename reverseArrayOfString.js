@@ -15,3 +15,13 @@ function reverseArrayOfStrings(arr) {
   return arr;
 }
 console.log(reverseArrayOfStrings(arr)); //[ 'elppa', 'ananab', 'yrrehc', 'etad' ]
+
+//using inbuiltFunction
+let array = ["apple", "banana", "cherry", "date"];
+
+// Reverse the characters within each string element
+for (let i = 0; i < array.length; i++) {
+  array[i] = array[i].split("").reverse().join("");
+}
+
+console.log(array); // Output: ["elppa", "ananab", "yrrehc", "etad"]
