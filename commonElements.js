@@ -1,13 +1,27 @@
 //find the common elements between two array?
 
-let arr1 = [6, 5, 8, 7, 9];
-let arr2 = [1, 2, 5, 9, 4, 3];
-let commonArr = [];
-for (let i = 0; i < arr1.length; i++) {
-  for (let j = 0; j < arr2.length; j++) {
-    if (arr1[i] == arr2[j]) {
-      commonArr[commonArr.length] = arr2[j];
-    }
+let n = Math.floor(Math.random() * 10);
+let m = Math.floor(Math.random() * 10);
+console.log(n);
+console.log(m);
+
+let arr1 = Array.from({ length: n }, () => Math.floor(Math.random() * 10));
+let arr2 = Array.from({ length: m }, () => Math.floor(Math.random() * 10));
+console.log(arr1);
+console.log(arr2);
+
+let obj = {};
+let common = [];
+
+for (let i = 0; i < n; i++) {
+  obj[arr1[i]] = true;
+}
+for (let j = 0; j < m; j++) {
+  if (obj[arr2[j]]) {
+    common[common.length] = arr2[j];
   }
 }
-console.log(commonArr); //[5,9]
+console.log(common);
+
+//Time complexity =>O(n+m)
+//space complexity =>O(n**2)
